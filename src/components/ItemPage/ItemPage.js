@@ -118,9 +118,9 @@ function ItemPage() {
             </div> 
 
             <div className='text'>
-                <p>ITEM TITLE size</p>
-                <p>DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION</p>
-                <p>PRICE</p>
+                <p className='product-title'>ITEM TITLE size</p>
+                <p className='product-description'>DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION</p>
+                <p className='product-price'>PRICE</p>
             </div>
         </>
     )    

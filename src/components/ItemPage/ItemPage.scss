@@ -2,7 +2,7 @@
 .photos {
     display: flex;
     justify-content: space-around;
-    padding: 0 2rem;
+    padding: 0.5rem 2rem 0;
 }
 
 .next-photo0{
@@ -60,6 +60,20 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    padding-top: 0.5rem;
+}
+
+.product-title {
+
+}
+
+.product-description {
+
+}
+
+.product-price {
+
+
 }
 
 .selected-photo {

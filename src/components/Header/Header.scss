@@ -28,5 +28,9 @@ $scale: #d8d8d8;
         -5px 4px 0 lighten($base,3%), 
         -6px 5px 0 lighten($base,2%), 
         -7px 6px 0 lighten($base,1%), 
-        -8px 7px 0 $base     
+        -8px 7px 0 $base;
+        
+    &:hover{
+        cursor: pointer;
+    }    
 }
