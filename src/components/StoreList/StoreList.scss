@@ -1,0 +1,19 @@
+.stores {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 2rem;
+    padding-bottom: 0.5rem;
+}
+.store {
+    border: 1px solid white;
+    background-color: gainsboro;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    &:hover{
+        background-color: aquamarine;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,32 @@
+@use "../../styles/typography" as *;
+$accent: #000000;
+$base: #000000;
+$scale: #d8d8d8;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.owText{
+    font-family: 'data';
+    padding: 0;
+    margin: 0;
+    padding-left: 0.8rem;
+    display: flex;
+    justify-content: center;
+    -webkit-text-stroke: 1px white;
+    font-size: 8rem;
+    //letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow:
+        /*main 3d shadow*/
+        -1px 0px 0 lighten($base,6%), 
+        -2px 1px 0 lighten($base,5%), 
+        -3px 2px 0 lighten($base,5%), 
+        -4px 3px 0 lighten($base,4%), 
+        -5px 4px 0 lighten($base,3%), 
+        -6px 5px 0 lighten($base,2%), 
+        -7px 6px 0 lighten($base,1%), 
+        -8px 7px 0 $base     
+}
