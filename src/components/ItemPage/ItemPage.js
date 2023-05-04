@@ -1,15 +1,36 @@
 import './ItemPage.scss';
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-function ItemPage() {
-  const [selected, setSelected] = useState(0);  
+function ItemPage(props) {
+  const [selected, setSelected] = useState(0);
+//   const [productArray, setProductArray] = useState([]);
 
+//   useEffect(() => {
+//     setProductArray(props.allProducts);
+//   }, []);
+
+  let productArray = props.allProducts;  
+  const Param = useParams();   
+  let nick = '';
+  if(props.nickname === '')
+  {
+    nick = Param.id;
+  }
+  else
+  {
+    nick = props.nickname;
+  }
+  const currentIndex = productArray.findIndex(v => v.nickname === nick);
+   
+  if(props.allProducts.length > 0)
+  {
   if(selected === 0)
   {
     return (
         <>
             <div className='container'> 
-                <div className='next-photo0 selected-photo'></div>  
+                <img src={productArray[currentIndex].image1} className='next-photo0 selected-photo'></img>  
             </div> 
 
             <div className='photos'>
@@ -34,7 +55,7 @@ function ItemPage() {
         return (
             <>
                 <div className='container'> 
-                    <div className='next-photo1 selected-photo'></div>
+                    <img src={productArray[currentIndex].image1} className='next-photo0 selected-photo'></img>  
                 </div> 
 
                 <div className='photos'>
@@ -59,7 +80,7 @@ function ItemPage() {
         return (
             <>
                 <div className='container'> 
-                    <div className='next-photo2 selected-photo'></div> 
+                    <img src={productArray[currentIndex].image1} className='next-photo0 selected-photo'></img>  
                 </div> 
 
                 <div className='photos'>
@@ -83,7 +104,7 @@ function ItemPage() {
     return (
         <>
             <div className='container'> 
-                <div className='next-photo3 selected-photo'></div>  
+                <img src={productArray[currentIndex].image1} className='next-photo0 selected-photo'></img>  
             </div> 
 
             <div className='photos'>
@@ -106,7 +127,7 @@ function ItemPage() {
     return (
         <>
             <div className='container'> 
-                <div className='next-photo4 selected-photo'></div>  
+                <img src={productArray[currentIndex].image1} className='next-photo0 selected-photo'></img>  
             </div> 
 
             <div className='photos'>
@@ -123,7 +144,8 @@ function ItemPage() {
                 <p className='product-price'>PRICE</p>
             </div>
         </>
-    )    
+    )
+  }    
 
 }
 

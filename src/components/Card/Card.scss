@@ -17,7 +17,8 @@
 
 .photo {
     width: 90%;
-    height: 85%;
+    height: 80%;
+    object-fit: cover;
     background-color: azure;
     margin: 1rem;
     border-radius: 5px;
@@ -27,5 +28,13 @@
 }
 
 .name {
+    background-color: unset;
+    padding:  0 0.5rem;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     background-color: unset;
 }
