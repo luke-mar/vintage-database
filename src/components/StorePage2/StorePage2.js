@@ -1,14 +1,17 @@
-import './Card.scss';
+import './StorePage2.scss';
 import { useNavigate } from 'react-router-dom';
 
 
-function Card(props) {
+function StorePage2(props) {
   const navigate = useNavigate();
+  function checkStore(product) {
+    return product.store === 'store2';
+  }
 
   return (
     <>
       {
-        props.allProducts.map (product =>{
+        props.allProducts.filter(checkStore).map (product =>{
           return(
             <div className='container'>
               <div className='card'>
@@ -26,4 +29,4 @@ function Card(props) {
   )
 }
 
-export default Card;
+export default StorePage2;
