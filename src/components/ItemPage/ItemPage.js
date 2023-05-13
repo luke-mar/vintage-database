@@ -26,46 +26,51 @@ function ItemPage(props) {
   {
     return (
         <div className='item-all'>
-            <div className='selected-container'> 
-                <img src={productArray[currentIndex].image1} className='selected-photo'></img>  
+
+            <div className='allphotos'>
+                <div className='selected-container'> 
+                    <img src={productArray[currentIndex].image1} className='selected-photo'></img>  
+                </div> 
+
+                <div className='photos'>
+                    <img src={productArray[currentIndex].image1} className='next-photo0' onClick={()=>{setSelected(0)}}></img>
+                    <img src={productArray[currentIndex].image2} className='next-photo1' onClick={()=>{setSelected(1)}}></img>
+                    <img src={productArray[currentIndex].image3} className='next-photo2' onClick={()=>{setSelected(2)}}></img>
+                    <img src={productArray[currentIndex].image4} className='next-photo3' onClick={()=>{setSelected(3)}}></img>
+                    <img src={productArray[currentIndex].image5} className='next-photo4' onClick={()=>{setSelected(4)}}></img>
+                </div>
             </div> 
 
-            <div className='photos'>
-                <img src={productArray[currentIndex].image1} className='next-photo0' onClick={()=>{setSelected(0)}}></img>
-                <img src={productArray[currentIndex].image2} className='next-photo1' onClick={()=>{setSelected(1)}}></img>
-                <img src={productArray[currentIndex].image3} className='next-photo2' onClick={()=>{setSelected(2)}}></img>
-                <img src={productArray[currentIndex].image4} className='next-photo3' onClick={()=>{setSelected(3)}}></img>
-                <img src={productArray[currentIndex].image5} className='next-photo4' onClick={()=>{setSelected(4)}}></img>
-            </div> 
+            <div className='alltext'>
+                <div className='text'>
+                    <p className='product-title'>{productArray[currentIndex].name}</p>
+                    <p className='product-description'>{productArray[currentIndex].description}</p>
+                    <p className='product-size'>Size: {productArray[currentIndex].size}</p>
+                    <p className='product-price'>$ {productArray[currentIndex].price}</p>
+                </div>
 
-            <div className='text'>
-                <p className='product-title'>ITEM TITLE</p>
-                <p className='product-description'>DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION</p>
-                <p className='product-size'>SIZE</p>
-                <p className='product-price'>PRICE</p>
-            </div>
-
-            <div className='pay'>
-            <PayPalScriptProvider>
-        <PayPalButtons
-          createOrder={(data, actions) => {
-            return actions.order.create({
-              purchase_units: [
-                {
-                  amount: {
-                    value: "13.99",
-                  },
-                },
-              ],
-            });
-          }}
-          onApprove={async (data, actions) => {
-            const details = await actions.order.capture();
-            const name = details.payer.name.given_name;
-            alert("Transaction completed by " + name);
-          }}
-        />
-      </PayPalScriptProvider>
+                <div className='pay'>
+                    <PayPalScriptProvider>
+                        <PayPalButtons
+                        createOrder={(data, actions) => {
+                            return actions.order.create({
+                            purchase_units: [
+                                {
+                                amount: {
+                                    value: productArray[currentIndex].price,
+                                },
+                                },
+                            ],
+                            });
+                        }}
+                        onApprove={async (data, actions) => {
+                            const details = await actions.order.capture();
+                            const name = details.payer.name.given_name;
+                            alert("Transaction completed by " + name);
+                        }}
+                        />
+                    </PayPalScriptProvider>
+                </div>
             </div>
 
         </div>
@@ -76,25 +81,54 @@ function ItemPage(props) {
     {
         return (
             <div className='item-all'>
+
+            <div className='allphotos'>
                 <div className='selected-container'> 
                     <img src={productArray[currentIndex].image2} className='selected-photo'></img>  
                 </div> 
 
                 <div className='photos'>
-                <img src={productArray[currentIndex].image1} className='next-photo0' onClick={()=>{setSelected(0)}}></img>
-                <img src={productArray[currentIndex].image2} className='next-photo1' onClick={()=>{setSelected(1)}}></img>
-                <img src={productArray[currentIndex].image3} className='next-photo2' onClick={()=>{setSelected(2)}}></img>
-                <img src={productArray[currentIndex].image4} className='next-photo3' onClick={()=>{setSelected(3)}}></img>
-                <img src={productArray[currentIndex].image5} className='next-photo4' onClick={()=>{setSelected(4)}}></img>
-                </div> 
+                    <img src={productArray[currentIndex].image1} className='next-photo0' onClick={()=>{setSelected(0)}}></img>
+                    <img src={productArray[currentIndex].image2} className='next-photo1' onClick={()=>{setSelected(1)}}></img>
+                    <img src={productArray[currentIndex].image3} className='next-photo2' onClick={()=>{setSelected(2)}}></img>
+                    <img src={productArray[currentIndex].image4} className='next-photo3' onClick={()=>{setSelected(3)}}></img>
+                    <img src={productArray[currentIndex].image5} className='next-photo4' onClick={()=>{setSelected(4)}}></img>
+                </div>
+            </div> 
 
+            <div className='alltext'>
                 <div className='text'>
-                    <p className='product-title'>ITEM TITLE</p>
-                    <p className='product-description'>DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION</p>
-                    <p className='product-size'>SIZE</p>
-                    <p className='product-price'>PRICE</p>
+                    <p className='product-title'>{productArray[currentIndex].name}</p>
+                    <p className='product-description'>{productArray[currentIndex].description}</p>
+                    <p className='product-size'>Size: {productArray[currentIndex].size}</p>
+                    <p className='product-price'>$ {productArray[currentIndex].price}</p>
+                </div>
+
+                <div className='pay'>
+                    <PayPalScriptProvider>
+                        <PayPalButtons
+                        createOrder={(data, actions) => {
+                            return actions.order.create({
+                            purchase_units: [
+                                {
+                                amount: {
+                                    value: productArray[currentIndex].price,
+                                },
+                                },
+                            ],
+                            });
+                        }}
+                        onApprove={async (data, actions) => {
+                            const details = await actions.order.capture();
+                            const name = details.payer.name.given_name;
+                            alert("Transaction completed by " + name);
+                        }}
+                        />
+                    </PayPalScriptProvider>
                 </div>
             </div>
+
+        </div>
         )
     }
 
@@ -102,6 +136,8 @@ function ItemPage(props) {
     {
         return (
             <div className='item-all'>
+
+            <div className='allphotos'>
                 <div className='selected-container'> 
                     <img src={productArray[currentIndex].image3} className='selected-photo'></img>  
                 </div> 
@@ -112,66 +148,148 @@ function ItemPage(props) {
                     <img src={productArray[currentIndex].image3} className='next-photo2' onClick={()=>{setSelected(2)}}></img>
                     <img src={productArray[currentIndex].image4} className='next-photo3' onClick={()=>{setSelected(3)}}></img>
                     <img src={productArray[currentIndex].image5} className='next-photo4' onClick={()=>{setSelected(4)}}></img>
-                </div> 
+                </div>
+            </div> 
 
+            <div className='alltext'>
                 <div className='text'>
-                    <p className='product-title'>ITEM TITLE</p>
-                    <p className='product-description'>DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION</p>
-                    <p className='product-size'>SIZE</p>
-                    <p className='product-price'>PRICE</p>
+                    <p className='product-title'>{productArray[currentIndex].name}</p>
+                    <p className='product-description'>{productArray[currentIndex].description}</p>
+                    <p className='product-size'>Size: {productArray[currentIndex].size}</p>
+                    <p className='product-price'>$ {productArray[currentIndex].price}</p>
+                </div>
+
+                <div className='pay'>
+                    <PayPalScriptProvider>
+                        <PayPalButtons
+                        createOrder={(data, actions) => {
+                            return actions.order.create({
+                            purchase_units: [
+                                {
+                                amount: {
+                                    value: productArray[currentIndex].price,
+                                },
+                                },
+                            ],
+                            });
+                        }}
+                        onApprove={async (data, actions) => {
+                            const details = await actions.order.capture();
+                            const name = details.payer.name.given_name;
+                            alert("Transaction completed by " + name);
+                        }}
+                        />
+                    </PayPalScriptProvider>
                 </div>
             </div>
+
+        </div>
         )
     }
 
     if(selected === 3)
     return (
         <div className='item-all'>
-            <div className='selected-container'> 
-                <img src={productArray[currentIndex].image4} className='selected-photo'></img>  
+
+            <div className='allphotos'>
+                <div className='selected-container'> 
+                    <img src={productArray[currentIndex].image4} className='selected-photo'></img>  
+                </div> 
+
+                <div className='photos'>
+                    <img src={productArray[currentIndex].image1} className='next-photo0' onClick={()=>{setSelected(0)}}></img>
+                    <img src={productArray[currentIndex].image2} className='next-photo1' onClick={()=>{setSelected(1)}}></img>
+                    <img src={productArray[currentIndex].image3} className='next-photo2' onClick={()=>{setSelected(2)}}></img>
+                    <img src={productArray[currentIndex].image4} className='next-photo3' onClick={()=>{setSelected(3)}}></img>
+                    <img src={productArray[currentIndex].image5} className='next-photo4' onClick={()=>{setSelected(4)}}></img>
+                </div>
             </div> 
 
-            <div className='photos'>
-                <img src={productArray[currentIndex].image1} className='next-photo0' onClick={()=>{setSelected(0)}}></img>
-                <img src={productArray[currentIndex].image2} className='next-photo1' onClick={()=>{setSelected(1)}}></img>
-                <img src={productArray[currentIndex].image3} className='next-photo2' onClick={()=>{setSelected(2)}}></img>
-                <img src={productArray[currentIndex].image4} className='next-photo3' onClick={()=>{setSelected(3)}}></img>
-                <img src={productArray[currentIndex].image5} className='next-photo4' onClick={()=>{setSelected(4)}}></img>
-            </div> 
+            <div className='alltext'>
+                <div className='text'>
+                    <p className='product-title'>{productArray[currentIndex].name}</p>
+                    <p className='product-description'>{productArray[currentIndex].description}</p>
+                    <p className='product-size'>Size: {productArray[currentIndex].size}</p>
+                    <p className='product-price'>$ {productArray[currentIndex].price}</p>
+                </div>
 
-            <div className='text'>
-                <p className='product-title'>ITEM TITLE</p>
-                <p className='product-description'>DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION</p>
-                <p className='product-size'>SIZE</p>
-                <p className='product-price'>PRICE</p>
+                <div className='pay'>
+                    <PayPalScriptProvider>
+                        <PayPalButtons
+                        createOrder={(data, actions) => {
+                            return actions.order.create({
+                            purchase_units: [
+                                {
+                                amount: {
+                                    value: productArray[currentIndex].price,
+                                },
+                                },
+                            ],
+                            });
+                        }}
+                        onApprove={async (data, actions) => {
+                            const details = await actions.order.capture();
+                            const name = details.payer.name.given_name;
+                            alert("Transaction completed by " + name);
+                        }}
+                        />
+                    </PayPalScriptProvider>
+                </div>
             </div>
+
         </div>
     )
 
     if(selected === 4)
     return (
         <div className='item-all'>
-            <div className='selected-container'> 
-                <img src={productArray[currentIndex].image5} className='selected-photo'></img>  
+
+            <div className='allphotos'>
+                <div className='selected-container'> 
+                    <img src={productArray[currentIndex].image5} className='selected-photo'></img>  
+                </div> 
+
+                <div className='photos'>
+                    <img src={productArray[currentIndex].image1} className='next-photo0' onClick={()=>{setSelected(0)}}></img>
+                    <img src={productArray[currentIndex].image2} className='next-photo1' onClick={()=>{setSelected(1)}}></img>
+                    <img src={productArray[currentIndex].image3} className='next-photo2' onClick={()=>{setSelected(2)}}></img>
+                    <img src={productArray[currentIndex].image4} className='next-photo3' onClick={()=>{setSelected(3)}}></img>
+                    <img src={productArray[currentIndex].image5} className='next-photo4' onClick={()=>{setSelected(4)}}></img>
+                </div>
             </div> 
 
-            <div className='photos'>
-                <img src={productArray[currentIndex].image1} className='next-photo0' onClick={()=>{setSelected(0)}}></img>
-                <img src={productArray[currentIndex].image2} className='next-photo1' onClick={()=>{setSelected(1)}}></img>
-                <img src={productArray[currentIndex].image3} className='next-photo2' onClick={()=>{setSelected(2)}}></img>
-                <img src={productArray[currentIndex].image4} className='next-photo3' onClick={()=>{setSelected(3)}}></img>
-                <img src={productArray[currentIndex].image5} className='next-photo4' onClick={()=>{setSelected(4)}}></img>
-            </div> 
+            <div className='alltext'>
+                <div className='text'>
+                    <p className='product-title'>{productArray[currentIndex].name}</p>
+                    <p className='product-description'>{productArray[currentIndex].description}</p>
+                    <p className='product-size'>Size: {productArray[currentIndex].size}</p>
+                    <p className='product-price'>$ {productArray[currentIndex].price}</p>
+                </div>
 
-            <div className='text'>
-                <p className='product-title'>ITEM TITLE</p>
-                <p className='product-description'>DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION</p>
-                <p className='product-size'>SIZE</p>
-                <p className='product-price'>PRICE</p>
+                <div className='pay'>
+                    <PayPalScriptProvider>
+                        <PayPalButtons
+                        createOrder={(data, actions) => {
+                            return actions.order.create({
+                            purchase_units: [
+                                {
+                                amount: {
+                                    value: productArray[currentIndex].price,
+                                },
+                                },
+                            ],
+                            });
+                        }}
+                        onApprove={async (data, actions) => {
+                            const details = await actions.order.capture();
+                            const name = details.payer.name.given_name;
+                            alert("Transaction completed by " + name);
+                        }}
+                        />
+                    </PayPalScriptProvider>
+                </div>
             </div>
 
-
-            
         </div>
     )
   }    

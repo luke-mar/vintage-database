@@ -18,8 +18,8 @@ function StorePage4(props) {
                 <img src={product.image1} className='photo' onClick={()=>{props.setNickname(product.nickname); navigate(`/item/${product.nickname}`);}}></img> 
                 <div className='row'>
                     <div className='name'>{product.name}</div> 
-                    <div className='name'>{product.size}</div> 
-                  </div>
+                </div>
+                <div className='name'>{product.size}</div> 
               </div>
             </div> 
           );

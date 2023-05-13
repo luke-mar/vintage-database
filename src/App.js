@@ -21,19 +21,19 @@ import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore';
 import { collectIdsandDocs } from './utils/utils';
 
 //Firestore Database Config
-const firebaseConfig = {
-  apiKey: "AIzaSyBO3tlr4nDe9mEPtmTDMkwQqVy_i8IUMpc",
-  authDomain: "database2-39279.firebaseapp.com",
-  projectId: "database2-39279",
-  storageBucket: "database2-39279.appspot.com",
-  messagingSenderId: "918477369356",
-  appId: "1:918477369356:web:d895e47847fab5d982fe29",
-  measurementId: "G-F06156X9QW"
-};
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBO3tlr4nDe9mEPtmTDMkwQqVy_i8IUMpc",
+//   authDomain: "database2-39279.firebaseapp.com",
+//   projectId: "database2-39279",
+//   storageBucket: "database2-39279.appspot.com",
+//   messagingSenderId: "918477369356",
+//   appId: "1:918477369356:web:d895e47847fab5d982fe29",
+//   measurementId: "G-F06156X9QW"
+// };
 
 // Initialize Firebase
-const appF = initializeApp(firebaseConfig);
-const db = getFirestore(appF);
+// const appF = initializeApp(firebaseConfig);
+// const db = getFirestore(appF);
 
 
 function App() {
@@ -41,21 +41,22 @@ function App() {
   const [nickname, setNickname] = useState('');
 
   //Pull Data from local Back-end
-  // useEffect(() => {
-  //   axios.get('http://localhost:8080/products/')
-  //     .then((response) => {
-  //       if(response.data){
-  //         setAllProducts(response.data);
-  //       }
-  //     });
-  // }, []);
-
-
-  useEffect(async() => {
-    const querySnapshot = await getDocs(collection(db, "products"));
-    const results = querySnapshot.docs.map(collectIdsandDocs);
-    setAllProducts(results);
+  useEffect(() => {
+    axios.get('http://localhost:8080/products/')
+      .then((response) => {
+        if(response.data){
+          setAllProducts(response.data);
+        }
+      });
   }, []);
+
+
+  //Pull Data From Firestore Database
+  // useEffect(async() => {
+  //   const querySnapshot = await getDocs(collection(db, "products"));
+  //   const results = querySnapshot.docs.map(collectIdsandDocs);
+  //   setAllProducts(results);
+  // }, []);
 
 
   return (
