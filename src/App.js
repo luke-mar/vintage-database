@@ -19,7 +19,7 @@ import { initializeApp } from 'firebase/app';
 import 'firebase/firestore';
 import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore';
 import { collectIdsandDocs } from './utils/utils';
-
+import './index.css';
 //Firestore Database Config
 // const firebaseConfig = {
 //   apiKey: "AIzaSyBO3tlr4nDe9mEPtmTDMkwQqVy_i8IUMpc",

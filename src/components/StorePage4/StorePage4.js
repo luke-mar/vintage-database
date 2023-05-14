@@ -19,7 +19,7 @@ function StorePage4(props) {
                 <div className='row'>
                     <div className='name'>{product.name}</div> 
                 </div>
-                <div className='name'>{product.size}</div> 
+                <div className='name2'>{product.size}</div> 
               </div>
             </div> 
           );

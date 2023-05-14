@@ -1,3 +1,4 @@
+@use "../../styles/typography" as *;
 @import '../../styles/partials/mixins.scss';
 
 .next-photo0{
@@ -60,19 +61,23 @@
 .product-title {
     margin-bottom: 2rem;
     font-size: 24px;
+    border-bottom: 1px solid black;
 }
 
 .product-description {
     padding-bottom: 1rem;
     width: 100%;
+    font-family: 'coda';
 }
 
 .product-price {
     margin-bottom: 1rem;
+    font-family: 'coda';
 }
 
 .product-size {
     padding-bottom: 1rem;
+    font-family: 'coda';
 }
 
 .selected-container {
@@ -90,19 +95,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 
 .item-all {
-    margin-left: 8rem;
-    margin-right: 8rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
     display: flex;
     margin-top: 0.5rem;
+    //width: 100%;
     justify-content: flex-start;
     align-items: flex-start;
     @include mobile-behavior {
         flex-direction: column;
-
+        margin: unset;
     }
 }
 
@@ -115,6 +122,9 @@
     justify-content: flex-start;
     align-items: flex-start;
     width: 4rem;
+    @include mobile-behavior {
+        align-items: center;
+    }
 }
 
 .allphotos {
@@ -139,7 +149,14 @@
     justify-content: flex-start;
     align-items: flex-start;
     width: 105%;
-    margin-top: 10%;
+    margin-top: 8%;
+    @include mobile-behavior {
+        align-items: center;
+        margin-top: 0;
+        justify-content: center;
+        width: 100%;
+        //margin: 0 2rem;
+    }
 }
 
 .text {
@@ -151,7 +168,11 @@
     padding: 0;
     margin: 0;
     @include mobile-behavior {
-        padding-top: 0.5rem;
+        //padding-top: 0.5rem;
+        justify-content: flex-start;
+        align-items: center;
+        width: 87.5%;
+
     }
     @include desktop-behavior {
         padding-top: 0;

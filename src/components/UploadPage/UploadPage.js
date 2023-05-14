@@ -5,18 +5,18 @@ function UploadPage() {
     <>
         <div className='upload-items'>
             <div className='upload-photos'>
-                <button>Photo 1</button>  
-                <button>Photo 2</button>  
-                <button>Photo 3</button>  
-                <button>Photo 4</button>  
-                <button>Photo 5</button>
+                <button className='upload-style'>Photo 1</button>  
+                <button className='upload-style'>Photo 2</button>  
+                <button className='upload-style'>Photo 3</button>  
+                <button className='upload-style'>Photo 4</button>  
+                <button className='upload-style'>Photo 5</button>
             </div>
 
-            <input name='product-title' placeholder='Product Name'></input>
-            <input name='product-title' placeholder='Product Descrption'></input>
-            <input name='product-title' placeholder='Product Price'></input>
+            <input className='upload-style' name='product-title' placeholder='Product Name'></input>
+            <input className='upload-style' name='product-description' placeholder='Product Descrption'></input>
+            <input className='upload-style' name='product-price' placeholder='Product Price'></input>
 
-            <button>UPLOAD</button>  
+            <button className='upload-style'>UPLOAD</button>  
         </div>    
     </>
   );
