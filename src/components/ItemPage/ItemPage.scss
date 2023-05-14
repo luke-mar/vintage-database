@@ -168,11 +168,9 @@
     padding: 0;
     margin: 0;
     @include mobile-behavior {
-        //padding-top: 0.5rem;
         justify-content: flex-start;
         align-items: center;
         width: 87.5%;
-
     }
     @include desktop-behavior {
         padding-top: 0;
