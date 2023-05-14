@@ -3,9 +3,8 @@
 
 .card {
     border-radius: 5px;
-    border: 1px solid rgb(210, 61, 61);
     background-color:white;
-    width: 100%;
+    width: auto;
     height: 50vw;
     display: flex;
     flex-direction: column;
@@ -15,7 +14,14 @@
     font-size: 1.125rem;
     @include mobile-behavior {
         height: 90%;
+        padding-bottom: unset;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
+    @include tablet-behavior {
+        height: 60vw;
+    }
+    margin-bottom: 0.5rem;
 }
 
 .container {
@@ -35,10 +41,10 @@
 
 .photo {
     min-height: 100%;
-    object-fit:scale-down;
+    object-fit: scale-down;
     background-color: white;
-    margin-bottom: 1rem;
-    border-radius: 5px;
+    //margin-bottom: 1rem;
+    border-radius: 7.5px;
     &:hover{
         cursor: pointer;
     }
@@ -46,8 +52,11 @@
         margin-bottom: unset;
         min-height: unset;
         width: 100%;
+    }
+    @include tablet-behavior {
 
     }
+    border: 2px solid rgb(129, 255, 129);
 }
 
 .name {
@@ -57,7 +66,7 @@
     padding: 0;
     border-bottom: 1px solid black;
     @include mobile-behavior {
-        font-size: 1rem;
+        font-size: 1.25rem;
     }
 }
 
@@ -67,7 +76,7 @@
     font-family: 'coda';
     font-weight: bold;
     @include mobile-behavior {
-        font-size: 0.75rem;
+        font-size: 0.95rem;
     }
 }
 
@@ -76,4 +85,23 @@
     flex-direction: row;
     justify-content: flex-start;
     background-color: unset;
+}
+
+.testborder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 2px solid rgb(129, 255, 129);
+    border-top: unset;
+    //width: 50vw;;
+}
+
+.all-prod-title {
+    font-size: 1.475rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    display: flex;
+    justify-content: center;
 }
