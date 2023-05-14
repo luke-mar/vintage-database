@@ -18,9 +18,11 @@
         margin-left: 1rem;
         margin-right: 1rem;
     }
+
     @include tablet-behavior {
         height: 60vw;
     }
+    
     margin-bottom: 0.5rem;
 }
 
@@ -104,4 +106,7 @@
     margin-bottom: 0.25rem;
     display: flex;
     justify-content: center;
+    @include mobile-behavior {
+        font-size: 1rem;
+    }
 }
