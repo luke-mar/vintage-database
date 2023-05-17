@@ -59,6 +59,7 @@
 }
 
 .product-title {
+    margin-top: 1rem;
     margin-bottom: 2rem;
     font-size: 24px;
     border-bottom: 1px solid black;
@@ -68,6 +69,10 @@
     padding-bottom: 1rem;
     width: 100%;
     font-family: 'coda';
+    @include mobile-behavior{
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .product-price {
@@ -168,7 +173,7 @@
     padding: 0;
     margin: 0;
     @include mobile-behavior {
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
         width: 87.5%;
     }
@@ -177,5 +182,16 @@
     }
     @include tablet-behavior {
         padding-top: 0;
+    }
+}
+
+.falsef {
+    display: none;
+
+}
+
+.truef{
+    @include mobile-behavior{
+
     }
 }

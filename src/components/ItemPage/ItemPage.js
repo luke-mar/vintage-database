@@ -2,14 +2,15 @@ import './ItemPage.scss';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { PayPalButtons, PayPalScriptProvider } from '@paypal/react-paypal-js';
-
-
+import { useNavigate } from 'react-router-dom';
+import { db } from '../../App';
 function ItemPage(props) {
   const [selected, setSelected] = useState(0);
-
+  const navigate = useNavigate();  
   let productArray = props.allProducts;  
   const Param = useParams();   
   let nick = '';
+
   if(props.nickname === '')
   {
     nick = Param.id;
@@ -49,13 +50,14 @@ function ItemPage(props) {
                     <p className='product-price'>$ {productArray[currentIndex].price}</p>
                 </div>
 
-                <div className='pay'>
+                <div className={productArray[currentIndex].stock.toString() + 'f' + ' pay'}>
                     <PayPalScriptProvider>
                         <PayPalButtons
                         createOrder={(data, actions) => {
                             return actions.order.create({
                             purchase_units: [
                                 {
+                                description: productArray[currentIndex].name, 
                                 amount: {
                                     value: productArray[currentIndex].price,
                                 },
@@ -66,6 +68,9 @@ function ItemPage(props) {
                         onApprove={async (data, actions) => {
                             const details = await actions.order.capture();
                             const name = details.payer.name.given_name;
+                            props.updateStock(productArray[currentIndex].id);
+                            props.testReload();
+                            navigate('/');
                             alert("Transaction completed by " + name);
                         }}
                         />
@@ -104,7 +109,7 @@ function ItemPage(props) {
                     <p className='product-price'>$ {productArray[currentIndex].price}</p>
                 </div>
 
-                <div className='pay'>
+                <div className={productArray[currentIndex].stock.toString() + 'f' + ' pay'}>
                     <PayPalScriptProvider>
                         <PayPalButtons
                         createOrder={(data, actions) => {
@@ -121,6 +126,9 @@ function ItemPage(props) {
                         onApprove={async (data, actions) => {
                             const details = await actions.order.capture();
                             const name = details.payer.name.given_name;
+                            props.updateStock(productArray[currentIndex].id);
+                            props.testReload();
+                            navigate('/');
                             alert("Transaction completed by " + name);
                         }}
                         />
@@ -159,7 +167,7 @@ function ItemPage(props) {
                     <p className='product-price'>$ {productArray[currentIndex].price}</p>
                 </div>
 
-                <div className='pay'>
+                <div className={productArray[currentIndex].stock.toString() + 'f' + ' pay'}>
                     <PayPalScriptProvider>
                         <PayPalButtons
                         createOrder={(data, actions) => {
@@ -176,6 +184,9 @@ function ItemPage(props) {
                         onApprove={async (data, actions) => {
                             const details = await actions.order.capture();
                             const name = details.payer.name.given_name;
+                            props.updateStock(productArray[currentIndex].id);
+                            props.testReload();
+                            navigate('/');
                             alert("Transaction completed by " + name);
                         }}
                         />
@@ -213,7 +224,7 @@ function ItemPage(props) {
                     <p className='product-price'>$ {productArray[currentIndex].price}</p>
                 </div>
 
-                <div className='pay'>
+                <div className={productArray[currentIndex].stock.toString() + 'f' + ' pay'}>
                     <PayPalScriptProvider>
                         <PayPalButtons
                         createOrder={(data, actions) => {
@@ -230,6 +241,9 @@ function ItemPage(props) {
                         onApprove={async (data, actions) => {
                             const details = await actions.order.capture();
                             const name = details.payer.name.given_name;
+                            props.updateStock(productArray[currentIndex].id);
+                            props.testReload();
+                            navigate('/');
                             alert("Transaction completed by " + name);
                         }}
                         />
@@ -266,7 +280,7 @@ function ItemPage(props) {
                     <p className='product-price'>$ {productArray[currentIndex].price}</p>
                 </div>
 
-                <div className='pay'>
+                <div className={productArray[currentIndex].stock.toString() + 'f' + ' pay'}>
                     <PayPalScriptProvider>
                         <PayPalButtons
                         createOrder={(data, actions) => {
@@ -283,6 +297,9 @@ function ItemPage(props) {
                         onApprove={async (data, actions) => {
                             const details = await actions.order.capture();
                             const name = details.payer.name.given_name;
+                            props.updateStock(productArray[currentIndex].id);
+                            props.testReload();
+                            navigate('/');
                             alert("Transaction completed by " + name);
                         }}
                         />

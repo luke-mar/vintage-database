@@ -45,7 +45,6 @@
     min-height: 100%;
     object-fit: scale-down;
     background-color: white;
-    //margin-bottom: 1rem;
     border-radius: 7.5px;
     &:hover{
         cursor: pointer;
@@ -97,7 +96,6 @@
     border-bottom-left-radius: 5px;
     border: 2px solid rgb(129, 255, 129);
     border-top: unset;
-    //width: 50vw;;
 }
 
 .all-prod-title {
@@ -109,4 +107,16 @@
     @include mobile-behavior {
         font-size: 1rem;
     }
+}
+
+.trueh {
+    display: none;
+}
+
+.falseh {
+    color: red;
+}
+
+.falsej {
+    display: none;
 }

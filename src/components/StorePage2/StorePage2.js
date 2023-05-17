@@ -19,8 +19,8 @@ function StorePage2(props) {
               
               <div className='testborder'>
                 <div className='name'>{product.name}</div> 
-                <div className='name2'>{product.size}</div> 
-
+                <div className={product.stock.toString() + 'j' + ' name2'}>{product.size}</div> 
+                <div className={product.stock.toString() + 'h'}>OUT OF STOCK</div>
               </div>
         
           </div>

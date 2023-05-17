@@ -4,6 +4,7 @@
     width: 100%;
     padding: 0.5rem 2rem;
     padding-bottom: 2rem;
+    margin-top: 1rem;
 }
 
 .footer-upload {
@@ -15,5 +16,18 @@
     &:hover{
         cursor: pointer;
         background-color: darkseagreen;
+    }
+}
+
+.footer-logout {
+    background-color: rgb(255, 129, 129);
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.25rem;
+    border-radius: 4px;
+    margin-left: 1rem;
+    &:hover{
+        cursor: pointer;
+        background-color: rgb(255, 35, 35);
     }
 }
