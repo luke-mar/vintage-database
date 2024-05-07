@@ -1,8 +1,8 @@
 @use "../../styles/typography" as *;
 @import '../../styles/partials/mixins.scss';
-
+@import "~bootstrap/scss/bootstrap";
 .namething {
-    background-color: rgb(246, 246, 246);
+    //background-color: rgb(246, 246, 246);
     display: flex;
     justify-content: center;
     font-size: 14px;
@@ -18,7 +18,7 @@
         margin-right: 0.25%;
     }
     padding-bottom: 0.5rem;
-    background-color: rgb(246, 246, 246);
+    //background-color: rgb(239, 239, 239);  
     margin-left: 0.5%;
     margin-right: 0.5%;
 }
@@ -26,7 +26,7 @@
 
 .store {
     border: 1px solid rgb(0, 0, 0);
-    background-color: rgb(213, 213, 213);
+    background-color: rgb(212, 216, 219);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -35,7 +35,7 @@
     margin-left: 0.5%;
     margin-right: 0.5%;
     &:hover{
-        background-color: aquamarine;
+        background-color: rgb(129, 255, 129);
         cursor: pointer;
     }
     font-weight: 500;
@@ -55,4 +55,66 @@ div {
     background-color: white;
     display: flex;
     justify-content: center;
+}
+
+.droppy {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(239, 239, 239);  
+    width: 100%;
+    padding-bottom: 1rem;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.gre {
+    background-color: unset;
+    border: unset;
+    font-size: 1.475rem;
+    background-color: rgb(212, 216, 219);
+    border: 1px solid black;
+    @include mobile-behavior {
+        font-size: 1.35rem;
+    }
+    color: black;
+    &:hover {
+        background-color: rgb(212, 216, 219);
+        color: black;
+        border: 1px solid black;
+    }
+    &:active {
+        background-color: rgb(212, 216, 219);
+        color: black;
+        border: 1px solid black;
+    }
+    &:focus {
+        background-color: rgb(212, 216, 219);
+        color: black;
+        border: 1px solid black;
+    }
+    
+}
+
+.gre2 {
+    background-color: rgb(239, 239, 239);  
+    border: unset;
+    width: 100%;
+    color: black;
+    &:active {
+        border: unset;
+    }
+}
+
+.gre3 {
+    background-color: rgb(239, 239, 239);  
+    border: unset;
+    
+}
+
+.rowwy {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(239, 239, 239);  
+    border: unset;
 }

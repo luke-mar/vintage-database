@@ -13,7 +13,7 @@ import Login from './components/Login/Login';
 
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
-import axios from 'axios';
+//import axios from 'axios';
 
 import 'firebase/database';
 import { initializeApp } from 'firebase/app';
@@ -24,12 +24,13 @@ import './index.css';
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 
 //Firestore Database Config
+//Your firebase config object needs to be put here
 const firebaseConfig = {
-  apiKey: "AIzaSyBO3tlr4nDe9mEPtmTDMkwQqVy_i8IUMpc",
-  authDomain: "database2-39279.firebaseapp.com",
+  apiKey: process.env.REACT_APP_apik,
+  authDomain: process.env.REACT_APP_ad,
   projectId: "database2-39279",
   storageBucket: "database2-39279.appspot.com",
-  messagingSenderId: "918477369356",
+  messagingSenderId: process.env.REACT_APP_msi,
   appId: "1:918477369356:web:d895e47847fab5d982fe29",
   measurementId: "G-F06156X9QW"
 };

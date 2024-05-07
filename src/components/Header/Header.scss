@@ -35,7 +35,7 @@ $scale: #d8d8d8;
     &:hover{
         cursor: pointer;
     }
-    background-color: rgb(246, 246, 246);  
+    background-color: rgb(239, 239, 239);  
     @include mobile-behavior {
         font-size: 6rem;
         text-shadow: unset;
@@ -43,4 +43,12 @@ $scale: #d8d8d8;
         font-weight: unset;
         padding-left: unset;
     }  
+    @include tablet-behavior {
+        // font-size: 6rem;
+        // text-shadow: unset;
+        // -webkit-text-stroke: unset;
+        // font-weight: unset;
+        // padding-left: unset;  
+    }
+
 }

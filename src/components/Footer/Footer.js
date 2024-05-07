@@ -8,7 +8,7 @@ function Footer(props) {
   return (
     <>
         <div className='footer'>
-            <div className='footer-upload' onClick={()=>{navigate('upload')}}>UPLOAD</div>
+            {/* <div className='footer-upload' onClick={()=>{navigate('upload')}}>UPLOAD</div> */}
             <div className='footer-logout' onClick={()=>{}}>LOGOUT</div>
         </div>    
     </>

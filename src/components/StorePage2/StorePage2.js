@@ -10,11 +10,11 @@ function StorePage2(props) {
 
   return (
     <>
-      <div className='all-prod-title'>ALL PRODUCTS FROM DR. LEVI'S:</div>
+      <div className='all-prod-title'>ALL PRODUCTS FROM MISTER LEVI'S:</div>
       {
         props.allProducts.filter(checkStore).map (product =>{
           return(
-            <div className='card'>
+            <div className='cardt'>
               <img src={product.image1} className='photo' onClick={()=>{props.setNickname(product.nickname); navigate(`/item/${product.nickname}`);}}></img> 
               
               <div className='testborder'>

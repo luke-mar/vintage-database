@@ -1,5 +1,8 @@
 import './StoreList.scss';
 import { useNavigate } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 function StoreList(props) {
   const navigate = useNavigate();
@@ -23,12 +26,31 @@ function StoreList(props) {
             </ul>
           </div>
         </div> */}
-        <div className='stores'>
+
+          <Dropdown className='droppy'>
+            <Dropdown.Toggle className='gre'>
+              Stores
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu className='gre2'>
+              <Dropdown.Item className='gre3'>
+              <div className='rowwy'>
+                <div onClick={()=>{navigate(`/all`)}} className='store'>All Products</div>
+                <div onClick={()=>{navigate(`/store1`)}} className='store'>Drastic Graphics</div>
+                <div onClick={()=>{navigate(`/store2`)}} className='store'>Dr. Levi's</div>
+                <div onClick={()=>{navigate(`/store3`)}} className='store'>Wonder Why</div>
+                <div onClick={()=>{navigate(`/store4`)}} className='store'>Fiction Supply</div>
+              </div>
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+
+        {/* <div className='stores'>
             <div onClick={()=>{navigate(`/store1`)}} className='store'>Drastic Graphics</div>
             <div onClick={()=>{navigate(`/store2`)}} className='store'>Dr. Levi's</div>
             <div onClick={()=>{navigate(`/store3`)}} className='store'>Wonder Why</div>
             <div onClick={()=>{navigate(`/store4`)}} className='store'>Fiction Supply</div>
-        </div>
+        </div> */}
     </>
   );
 }

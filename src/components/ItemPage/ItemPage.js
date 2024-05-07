@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { PayPalButtons, PayPalScriptProvider } from '@paypal/react-paypal-js';
 import { useNavigate } from 'react-router-dom';
-import { db } from '../../App';
+
 function ItemPage(props) {
   const [selected, setSelected] = useState(0);
   const navigate = useNavigate();  
@@ -47,11 +47,12 @@ function ItemPage(props) {
                     <p className='product-title'>{productArray[currentIndex].name}</p>
                     <p className='product-description'>{productArray[currentIndex].description}</p>
                     <p className='product-size'>Size: {productArray[currentIndex].size}</p>
+                    <p className='product-description'>Measurements: {productArray[currentIndex].measurements}</p>
                     <p className='product-price'>$ {productArray[currentIndex].price}</p>
                 </div>
 
                 <div className={productArray[currentIndex].stock.toString() + 'f' + ' pay'}>
-                    <PayPalScriptProvider>
+                    <PayPalScriptProvider options={{ "client-id": process.env.REACT_APP_P }}>
                         <PayPalButtons
                         createOrder={(data, actions) => {
                             return actions.order.create({
@@ -106,11 +107,12 @@ function ItemPage(props) {
                     <p className='product-title'>{productArray[currentIndex].name}</p>
                     <p className='product-description'>{productArray[currentIndex].description}</p>
                     <p className='product-size'>Size: {productArray[currentIndex].size}</p>
+                    <p className='product-description'>Measurements: {productArray[currentIndex].measurements}</p>
                     <p className='product-price'>$ {productArray[currentIndex].price}</p>
                 </div>
 
                 <div className={productArray[currentIndex].stock.toString() + 'f' + ' pay'}>
-                    <PayPalScriptProvider>
+                    <PayPalScriptProvider options={{ "client-id": process.env.REACT_APP_P }}>
                         <PayPalButtons
                         createOrder={(data, actions) => {
                             return actions.order.create({
@@ -164,11 +166,12 @@ function ItemPage(props) {
                     <p className='product-title'>{productArray[currentIndex].name}</p>
                     <p className='product-description'>{productArray[currentIndex].description}</p>
                     <p className='product-size'>Size: {productArray[currentIndex].size}</p>
+                    <p className='product-description'>Measurements: {productArray[currentIndex].measurements}</p>
                     <p className='product-price'>$ {productArray[currentIndex].price}</p>
                 </div>
 
                 <div className={productArray[currentIndex].stock.toString() + 'f' + ' pay'}>
-                    <PayPalScriptProvider>
+                    <PayPalScriptProvider options={{ "client-id": process.env.REACT_APP_P }}>
                         <PayPalButtons
                         createOrder={(data, actions) => {
                             return actions.order.create({
@@ -221,11 +224,12 @@ function ItemPage(props) {
                     <p className='product-title'>{productArray[currentIndex].name}</p>
                     <p className='product-description'>{productArray[currentIndex].description}</p>
                     <p className='product-size'>Size: {productArray[currentIndex].size}</p>
+                    <p className='product-description'>Measurements: {productArray[currentIndex].measurements}</p>
                     <p className='product-price'>$ {productArray[currentIndex].price}</p>
                 </div>
 
                 <div className={productArray[currentIndex].stock.toString() + 'f' + ' pay'}>
-                    <PayPalScriptProvider>
+                    <PayPalScriptProvider options={{ "client-id": process.env.REACT_APP_P }}>
                         <PayPalButtons
                         createOrder={(data, actions) => {
                             return actions.order.create({
@@ -277,11 +281,12 @@ function ItemPage(props) {
                     <p className='product-title'>{productArray[currentIndex].name}</p>
                     <p className='product-description'>{productArray[currentIndex].description}</p>
                     <p className='product-size'>Size: {productArray[currentIndex].size}</p>
+                    <p className='product-description'>Measurements: {productArray[currentIndex].measurements}</p>
                     <p className='product-price'>$ {productArray[currentIndex].price}</p>
                 </div>
 
                 <div className={productArray[currentIndex].stock.toString() + 'f' + ' pay'}>
-                    <PayPalScriptProvider>
+                    <PayPalScriptProvider options={{ "client-id": process.env.REACT_APP_P }}>
                         <PayPalButtons
                         createOrder={(data, actions) => {
                             return actions.order.create({
