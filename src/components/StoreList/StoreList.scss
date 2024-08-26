@@ -41,9 +41,9 @@
     font-weight: 500;
     font-size: 20px;
     @include mobile-behavior {
-        font-size: 1.125rem;
-        margin-left: 0.25%;
-        margin-right: 0.25%;
+        font-size: 0.7rem;
+        //margin-left: 0.25%;
+        //margin-right: 0.25%;
     }
 }
 
@@ -117,4 +117,8 @@ div {
     justify-content: center;
     background-color: rgb(239, 239, 239);  
     border: unset;
+    @include mobile-behavior {
+        
+        //background-color: aquamarine;
+    }
 }
