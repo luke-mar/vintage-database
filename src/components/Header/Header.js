@@ -5,7 +5,7 @@ function Header() {
   const navigate = useNavigate();
   return (
     <>
-      <div className='owText' onClick={()=>{navigate('/')}}> database </div>
+      <div className='owText' onClick={()=>{navigate('/')}}> database!! </div>
     </>
   )
 }
